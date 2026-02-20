@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soporte | Sistema Escolar Nuevo León</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/soporte.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/logo.png') }}">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<header>
+    <nav class="navbar">
+        <div class="navbar-left">
+            <img src="{{ url_for('static', filename='img/logo.png') }}" class="nav-logo" alt="Gobierno NL">
+            <span class="navbar-title">Gobierno de Nuevo León</span>
+        </div>
+
+        <ul class="navbar-menu">
+            <li><a href="{{ url_for('pagina_principal') }}">Inicio</a></li>
+            <li><a href="{{ url_for('inscripcion') }}">Inscripción</a></li>
+            <li><a href="{{ url_for('reinscripcion') }}">Reinscripción</a></li>
+            <li><a href="{{ url_for('soporte') }}" class="active">Soporte</a></li>
+
+            <!-- PERFIL -->
+            <li class="dropdown">
+                <button class="dropbtn">
+                    {{ usuario[0].upper() if usuario else 'U' }}
+                </button>
+                <div class="dropdown-content">
+                    <a href="{{ url_for('mi_perfil') }}">
+                        <i class="fas fa-user"></i> Mi Perfil
+                    </a>
+                    <a href="{{ url_for('logout') }}">
+                        <i class="fas fa-sign-out-alt"></i> Cerrar sesión
+                    </a>
+                </div>
+            </li>
+        </ul>
+
+        <!-- BOTÓN HAMBURGUESA -->
+        <button class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <!-- MENÚ MÓVIL -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="{{ url_for('pagina_principal') }}">Inicio</a>
+        <a href="{{ url_for('inscripcion') }}">Inscripción</a>
+        <a href="{{ url_for('reinscripcion') }}">Reinscripción</a>
+        <a href="{{ url_for('soporte') }}">Soporte</a>
+        <a href="{{ url_for('mi_perfil') }}"><i class="fas fa-user"></i> Mi Perfil</a>
+        <a href="{{ url_for('logout') }}"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a>
+    </div>
+</header>
+<!-- =============== FIN NAVBAR =============== -->
+
+<!-- ================= CONTENIDO ================= -->
+<main class="container">
+
+    <div class="univ-header">
+        <img src="{{ url_for('static', filename='img/logo_universidad.png') }}"
+             alt="Logo Universidad"
+             class="univ-logo">
+    </div>
+
+    <section class="card">
+        <h2>Soporte Técnico y Ubicación</h2>
+
+        <div class="info">
+            <p><strong>📍 Ubicación:</strong><br>
+                Carr. Monterrey - Saltillo Km. 61.5, Bosques de Santa Catarina,
+                66359 Cdad. Santa Catarina, N.L.
+            </p>
+
+            <p><strong>📞 Teléfono:</strong><br>
+                +52 81 8124 8400
+            </p>
+
+            <p><strong>🌐 Página oficial:</strong><br>
+                <a href="https://utsc.edu.mx/" target="_blank">
+                    https://utsc.edu.mx/
+                </a>
+            </p>
+
+            <hr>
+
+            <h4>Horario de Atención</h4>
+            <p>Lunes a Viernes<br>8:30 AM – 5:30 PM</p>
+        </div>
+    </section>
+
+</main>
+<!-- ================= FIN CONTENIDO ================= -->
+
+<!-- ================= FOOTER ================= -->
+<footer class="main-footer">
+    <div class="footer-content">
+
+        <div class="footer-section">
+            <h4>Contacto</h4>
+            <p><i class="fas fa-phone"></i> +52 81 8124 8400</p>
+            <p><i class="fas fa-envelope"></i> soporte@utsc.edu.mx</p>
+        </div>
+
+        <div class="footer-section">
+            <h4>Enlaces Rápidos</h4><br>
+            <a href="{{ url_for('inscripcion') }}">Nueva Inscripción</a><br>
+            <a href="{{ url_for('reinscripcion') }}">Reinscripción</a>
+        </div>
+
+        <div class="footer-section">
+            <h4>Gobierno de Nuevo León</h4>
+            <p>Secretaría de Educación</p>
+            <p>© 2026 - Todos los derechos reservados</p>
+        </div>
+
+    </div>
+</footer>
+<!-- ================= FIN FOOTER ================= -->
+
+<!-- ================= JS ================= -->
+<script>
+function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('active');
+}
+</script>
+
+</body>
+</html>

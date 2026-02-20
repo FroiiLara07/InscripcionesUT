@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+    --nl-orange: #ff8a00;
+    --nl-green: #024240;
+    --bg-light: #f4f6f8;
+}
+
+/* ===== GENERAL ===== */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-light);
+    color: #333;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+    background-color: var(--nl-green);
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-logo {
+    height: 40px;
+}
+
+.logo-text {
+    color: white;
+    font-weight: 600;
+}
+
+.nav-links a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    color: var(--nl-orange);
+}
+
+/* ===== LINK ACTIVO (PÁGINA ACTUAL) ===== */
+.nav-links a.active {
+    color: var(--nl-orange);
+    border-bottom: 2px solid var(--nl-orange);
+    padding-bottom: 4px;
+}
+
+
+
+/* ===== CONTENEDOR ===== */
+.container {
+    padding: 40px 10%;
+}
+
+.univ-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.univ-logo {
+    max-width: 250px;
+}
+
+/* ===== CARD FORMULARIO ===== */
+.card {
+    background: white;
+    padding: 35px;
+    border-radius: 12px;
+    max-width: 700px;
+    margin: auto;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    border-top: 6px solid var(--nl-orange);
+}
+
+.card h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* ===== FORM ===== */
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: var(--nl-green);
+}
+
+input[type="text"],
+input[type="file"],
+input[type="email"],
+select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--nl-orange);
+    box-shadow: 0 0 0 2px rgba(255,138,0,0.2);
+}
+
+/* ===== BLOQUE DOCUMENTOS ===== */
+.docs-box {
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+
+.docs-box h4 {
+    margin-top: 0;
+    color: var(--nl-orange);
+}
+
+/* ===== BOTÓN ===== */
+.btn-primary {
+    background-color: var(--nl-orange);
+    color: white;
+    border: none;
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #e67e00;
+}
+
+/* ===== FOOTER ===== */
+.main-footer {
+    background-color: var(--nl-green);
+    color: white;
+    padding: 40px 5% 20px;
+    margin-top: 60px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    gap: 30px;
+}
+
+.footer-section h4 {
+    color: var(--nl-orange);
+    border-bottom: 2px solid var(--nl-orange);
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.footer-section a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    color: var(--nl-orange);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .container {
+        padding: 25px 5%;
+    }
+}

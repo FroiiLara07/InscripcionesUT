@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperar Contraseña</title>
+
+    <link rel="stylesheet" href="../static/css/contrasena.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/logo.png') }}">
+</head>
+<body>
+
+    <div class="container">
+        <div class="card">
+            <h2>Recuperar Contraseña</h2>
+            <p class="subtitle">
+                Ingresa tu correo electrónico y te enviaremos un enlace para restablecer tu contraseña.
+            </p>
+
+            {% with messages = get_flashed_messages(category_filter=['success', 'error']) %}
+                {% if messages %}
+                    <div class="flash-message">
+                        {{ messages[0] }}
+                    </div>
+                {% endif %}
+            {% endwith %}
+
+            <form action="{{ url_for('recuperar_contrasena') }}" method="POST">
+                <div class="form-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" name="email" placeholder="Correo electrónico" required>
+                </div>
+
+                <button type="submit" class="btn-primary">
+                    Enviar enlace
+                </button>
+            </form>
+
+            <a href="{{ url_for('login') }}" class="back-link">
+                <i class="fas fa-arrow-left"></i> Volver al inicio de sesión
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>
+

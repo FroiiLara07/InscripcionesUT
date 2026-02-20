@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* ===== VARIABLES ===== */
+:root {
+    --nl-orange: #ff8a00;
+    --nl-green: #024240;
+    --bg-light: #f4f6f8;
+}
+
+/* ===== GENERAL ===== */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-light);
+    color: #333;
+}
+
+/* ===== CONTENEDOR PERFIL ===== */
+.profile-container {
+    max-width: 600px;
+    margin: 80px auto;
+    background-color: #ffffff;
+    border-radius: 14px;
+    padding: 35px 40px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    border-top: 6px solid var(--nl-orange);
+}
+
+/* ===== TITULO ===== */
+.profile-container h2 {
+    margin-bottom: 25px;
+    color: var(--nl-green);
+    font-weight: 600;
+}
+
+/* ===== ICONO USUARIO ===== */
+.profile-icon {
+    font-size: 90px;
+    color: var(--nl-orange);
+    margin-bottom: 30px;
+}
+
+/* ===== ITEMS PERFIL ===== */
+.profile-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background-color: #f8f8f8;
+    padding: 15px 18px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.profile-item i {
+    color: var(--nl-green);
+    font-size: 20px;
+}
+
+.profile-item span {
+    font-weight: 600;
+    color: var(--nl-green);
+}
+
+.profile-item p {
+    margin: 0;
+    margin-left: auto;
+    font-weight: 500;
+}
+
+/* ===== BOTÓN ===== */
+.btn-back {
+    display: inline-block;
+    margin-top: 30px;
+    background-color: var(--nl-orange);
+    color: white;
+    padding: 14px 30px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-back i {
+    margin-right: 6px;
+}
+
+.btn-back:hover {
+    background-color: #e67e00;
+}

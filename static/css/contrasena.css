@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* ===== VARIABLES ===== */
+:root {
+    --nl-orange: #ff8a00;
+    --nl-green: #024240;
+    --bg-light: #f4f6f8;
+}
+
+/* ===== GENERAL ===== */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* ===== CONTENEDOR ===== */
+.container {
+    width: 100%;
+    padding: 20px;
+}
+
+/* ===== CARD ===== */
+.card {
+    background: #ffffff;
+    max-width: 450px;
+    margin: auto;
+    padding: 35px 40px;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    border-top: 6px solid var(--nl-orange);
+    text-align: center;
+}
+
+/* ===== TITULOS ===== */
+.card h2 {
+    color: var(--nl-green);
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+/* ===== MENSAJES ===== */
+.flash-message {
+    background-color: #e9f7ef;
+    color: #2e7d32;
+    border: 1px solid #c3e6cb;
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+}
+
+/* ===== FORM ===== */
+.form-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.form-group i {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--nl-green);
+    font-size: 18px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 14px 14px 14px 45px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--nl-orange);
+    box-shadow: 0 0 0 2px rgba(255,138,0,0.2);
+}
+
+/* ===== BOTÓN ===== */
+.btn-primary {
+    width: 100%;
+    background-color: var(--nl-orange);
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #e67e00;
+}
+
+/* ===== LINK REGRESO ===== */
+.back-link {
+    display: inline-block;
+    margin-top: 25px;
+    color: var(--nl-green);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.back-link i {
+    margin-right: 6px;
+}
+
+.back-link:hover {
+    color: var(--nl-orange);
+}

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Escolar Nuevo León</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/formulario.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/logo.png') }}">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<header>
+    <nav class="navbar">
+        <div class="navbar-left">
+            <img src="{{ url_for('static', filename='img/logo.png') }}" class="nav-logo" alt="Gobierno NL">
+            <span class="navbar-title">Gobierno de Nuevo León</span>
+        </div>
+
+        <ul class="navbar-menu">
+            <li><a href="/">Inicio</a></li>
+            <li><a href="/inscripcion" class="active">Inscripción</a></li>
+            <li><a href="/reinscripcion">Reinscripción</a></li>
+            <li><a href="/soporte">Soporte</a></li>
+
+            <!-- PERFIL -->
+            <li class="dropdown">
+                <button class="dropbtn">{{ usuario[0].upper() }}</button>
+                <div class="dropdown-content">
+                    <a href="/mi_perfil">
+                        <i class="fas fa-user"></i> Mi Perfil
+                    </a>
+                    <a href="/logout">
+                        <i class="fas fa-sign-out-alt"></i> Cerrar sesión
+                    </a>
+                </div>
+            </li>
+        </ul>
+
+        <!-- BOTÓN HAMBURGUESA -->
+        <button class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <!-- MENÚ MÓVIL -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="/">Inicio</a>
+        <a href="/inscripcion">Inscripción</a>
+        <a href="/reinscripcion">Reinscripción</a>
+        <a href="/soporte">Soporte</a>
+        <a href="/mi_perfil"><i class="fas fa-user"></i> Mi Perfil</a>
+        <a href="/logout"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a>
+    </div>
+</header>
+<!-- =============== FIN NAVBAR =============== -->
+
+<!-- ================= CONTENIDO ================= -->
+<div class="container">
+
+    <div class="univ-header">
+        <img src="{{ url_for('static', filename='img/logo_universidad.png') }}"
+             alt="Logo Universidad"
+             class="univ-logo">
+    </div>
+
+    <div class="card">
+        <h2 style="color: var(--nl-green);">
+            Formulario de Inscripción (Nuevo Ingreso)
+        </h2>
+
+        <form action="/submit" method="POST" enctype="multipart/form-data">
+
+            <div class="form-group">
+                <label>Nombre Completo del Alumno</label>
+                <input type="text" name="nombre" placeholder="Ej. Juan Pérez" required>
+            </div>
+
+            <div class="docs-box">
+                <h4>Carga de Documentación</h4>
+
+                <div class="form-group">
+                    <label>Acta de Nacimiento (PDF/JPG)</label>
+                    <input type="file" name="doc_acta">
+                </div>
+
+                <div class="form-group">
+                    <label>Certificado de Bachillerato</label>
+                    <input type="file" name="doc_cert">
+                </div>
+            </div>
+
+            <button type="submit" class="btn-primary">
+                ENVIAR INSCRIPCIÓN
+            </button>
+        </form>
+    </div>
+
+</div>
+<!-- ================= FIN CONTENIDO ================= -->
+
+<!-- ================= FOOTER ================= -->
+<footer class="main-footer">
+    <div class="footer-content">
+
+        <div class="footer-section">
+            <h4>Contacto</h4>
+            <p><i class="fas fa-phone"></i> +52 81 8124 8400</p>
+            <p><i class="fas fa-envelope"></i> soporte@utsc.edu.mx</p>
+        </div>
+
+        <div class="footer-section">
+            <h4>Enlaces Rápidos</h4><br>
+            <a href="/inscripcion">Nueva Inscripción</a><br>
+            <a href="/contacto">Ubicación de Planteles</a>
+        </div>
+
+        <div class="footer-section">
+            <h4>Gobierno de Nuevo León</h4>
+            <p>Secretaría de Educación</p>
+            <p>© 2026 - Todos los derechos reservados</p>
+        </div>
+
+    </div>
+</footer>
+<!-- ================= FIN FOOTER ================= -->
+
+<!-- ================= JS ================= -->
+<script>
+function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('active');
+}
+</script>
+
+</body>
+</html>

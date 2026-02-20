@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* ===== VARIABLES ===== */
+:root {
+    --nl-orange: #ff8a00;
+    --nl-green: #024240;
+    --bg-light: #f8f9fa;
+}
+
+/* ===== GENERAL ===== */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-light);
+    color: #333;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+    background-color: var(--nl-green);
+    padding: 15px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 4px solid var(--nl-orange);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-title {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.navbar-menu {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    align-items: center;
+}
+
+.navbar-menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.navbar-menu a:hover {
+    color: var(--nl-orange);
+    border-bottom: 2px solid var(--nl-orange);
+}
+
+/* ===== LINK ACTIVO (PÁGINA ACTUAL) ===== */
+.navbar-menu a.active {
+    color: var(--nl-orange);
+    border-bottom: 2px solid var(--nl-orange);
+}
+
+
+/* ===== LOGO EN NAVBAR ===== */
+.nav-logo {
+    height: 45px;
+    width: auto; 
+    object-fit: contain;
+    display: block;
+}
+
+
+/* ===== DROPDOWN ===== */
+.dropdown {
+    position: relative;
+}
+
+.dropbtn {
+    background-color: var(--nl-orange);
+    color: white;
+    border: none;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 50px;
+    background-color: var(--nl-green);
+    min-width: 180px;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 12px 15px;
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(255,255,255,0.1);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* ===== HAMBURGER ===== */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+}
+
+/* ===== MOBILE MENU ===== */
+.mobile-menu {
+    display: none;
+    background-color: var(--nl-green);
+    padding: 20px;
+}
+
+.mobile-menu a {
+    display: block;
+    color: white;
+    padding: 10px 0;
+    text-decoration: none;
+}
+
+.mobile-menu a:hover {
+    color: var(--nl-orange);
+}
+
+.mobile-menu.active {
+    display: block;
+}
+
+/* ===== CONTENIDO ===== */
+.container {
+    padding: 40px 10%;
+}
+
+.univ-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.univ-logo {
+    max-width: 250px;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    border-top: 6px solid var(--nl-orange);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.btn-group {
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-primary {
+    background-color: var(--nl-orange);
+    color: white;
+    padding: 15px 30px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    background-color: #e67e00;
+}
+
+.btn-secondary {
+    background-color: var(--nl-green);
+}
+
+/* ===== FOOTER ===== */
+.main-footer {
+    background-color: var(--nl-green);
+    color: white;
+    padding: 40px 5% 20px;
+    margin-top: 50px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.footer-section h4 {
+    color: var(--nl-orange);
+    border-bottom: 2px solid var(--nl-orange);
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.footer-section a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    color: var(--nl-orange);
+}
+
+.footer-section p {
+    font-size: 0.9rem;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .navbar-menu {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .container {
+        padding: 30px 5%;
+    }
+}

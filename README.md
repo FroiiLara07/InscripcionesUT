@@ -1,1 +1,1 @@
-# InscripcionesUT
+# Inscripciones

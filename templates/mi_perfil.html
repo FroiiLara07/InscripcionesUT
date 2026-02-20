@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Perfil</title>
+
+    <link rel="stylesheet" href="../static/css/perfil.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/logo.png') }}">
+</head>
+<body>
+
+    <div class="profile-container">
+        <h2>Mi Perfil</h2>
+
+        <i class="fas fa-user-circle profile-icon"></i>
+
+        <div class="profile-item">
+            <i class="fas fa-user"></i>
+            <span>Usuario:</span>
+            <p>{{ usuario }}</p>
+        </div>
+
+        <div class="profile-item">
+            <i class="fas fa-envelope"></i>
+            <span>Correo:</span>
+            <p>{{ email }}</p>
+        </div>
+
+        <a href="/pagina_principal" class="btn-back">
+            <i class="fas fa-arrow-left"></i> Volver al Inicio
+        </a>
+    </div>
+
+</body>
+</html>
+
